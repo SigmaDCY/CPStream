@@ -1,0 +1,37 @@
+name: C++ CI
+
+# 什么时候触发？
+on:
+  push:
+    branches: [ main ]    # 推送到main分支时
+  pull_request:
+    branches: [ main ]    # 有Pull Request时
+
+jobs:
+  build:
+    # 运行在什么系统上？
+    runs-on: ubuntu-latest
+    
+    steps:
+    # 步骤1：下载代码
+    - uses: actions/checkout@v4
+    
+    # 步骤2：安装依赖
+    - name: Install dependencies
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y cmake g++
+    
+    # 步骤3：配置项目
+    - name: Configure CMake
+      run: cmake -B build -S . -DCMAKE_BUILD_TYPE=Release
+    
+    # 步骤4：编译
+    - name: Build
+      run: cmake --build build --config Release
+    
+    # 步骤5：测试
+    - name: Test
+      run: |
+        cd build
+        ctest --output-on-failure
