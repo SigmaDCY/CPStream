@@ -94,14 +94,14 @@ void Problem::save()
 	std::ofstream cppFile(cppPath);
 	if (cppFile.is_open())
 	{
-		cppFile << "/*\n";
-		cppFile << " * 题目来源: " << group << "\n";
-		cppFile << " * 题目序号: " << id << "\n";
-		cppFile << " * 题目名称: " << name << "\n";
-		cppFile << " * 题目链接: " << url << "\n";
-		cppFile << " * 时间限制: " << timeLimit << " ms\n";
-		cppFile << " * 空间限制: " << memoryLimit << " MB\n";
-		cppFile << "*/\n";
+		cppFile << u8"/*\n";
+		cppFile << u8" * 题目来源: " << group << "\n";
+		cppFile << u8" * 题目序号: " << id << "\n";
+		cppFile << u8" * 题目名称: " << name << "\n";
+		cppFile << u8" * 题目链接: " << url << "\n";
+		cppFile << u8" * 时间限制: " << timeLimit << " ms\n";
+		cppFile << u8" * 空间限制: " << memoryLimit << " MB\n";
+		cppFile << u8"*/\n";
 		cppFile.close();
 	}
 	for (size_t i = 0; i < tests.size(); i++) {
