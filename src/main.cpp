@@ -117,14 +117,14 @@ int main(int argc, char* argv[])
 	{
 		std::cout << "cps> ";
 		std::string inst;
-		std::cin >> inst;
-		if (inst == "")
-		{
-			break;
-		}
+		std::getline(std::cin, inst);
 		if (inst[0] == '\0')
 		{
 			continue;
+		}
+		else if (inst == "exit")
+		{
+			break;
 		}
 		if (std::string(inst) == "fetch")
 		{
