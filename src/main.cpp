@@ -86,12 +86,21 @@ struct Problem
 				inFile << tests[i].input;
 				inFile.close();
 			}
-
+			else
+			{
+				std::cerr << "错误：无法创建文件 " << inPath << std::endl;
+				continue;
+			}
 			std::ofstream outFile(outPath);
 			if (outFile.is_open())
 			{
 				outFile << tests[i].output;
 				outFile.close();
+			}
+			else
+			{
+				std::cerr << "错误：无法创建文件 " << inPath << std::endl;
+				continue;
 			}
 		}
 	}
@@ -112,13 +121,13 @@ int main(int argc, char* argv[])
                        \|_________|                                                       
                                                                                           
                                                                                           )";
-	std::cout << CYAN << logo << RESET << std::endl << BOLD << "From fetch to review, flow like s stream." << RESET << std::endl;
+	std::cout << CYAN << logo << RESET << std::endl << BOLD << "From fetch to review, flow like a stream." << RESET << std::endl;
 	while (true)
 	{
 		std::cout << "cps> ";
 		std::string inst;
 		std::getline(std::cin, inst);
-		if (inst[0] == '\0')
+		if (inst.empty())
 		{
 			continue;
 		}
@@ -130,9 +139,11 @@ int main(int argc, char* argv[])
 		{
 			int port;
 			std::cin >> port;
+			std::cin.ignore();
 			if (port < 0 || port>65535)
 			{
 				std::cout << "请输入合法端口号！";
+				continue;
 			}
 			httplib::Server server;// 声明监听服务器
 			server.Post("/", [](const httplib::Request& req, httplib::Response& res) // 注册 POST 路由
