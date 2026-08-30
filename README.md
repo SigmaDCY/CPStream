@@ -1,4 +1,9 @@
-# CPStream
+﻿# CPStream
+
+![Language](https://img.shields.io/badge/language-C++17-blue)
+![Platform](https://img.shields.io/badge/platform-Luogu%20%7C%20CF%20%7C%20AtCoder-orange)
+![License](https://img.shields.io/badge/license-MIT-green)
+![Last Update](https://img.shields.io/github/last-commit/SigmaDCY/CPStream)
 
 From fetch to review, flow like a stream.
 从抓取到复习，一气呵成。
