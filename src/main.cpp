@@ -1,6 +1,6 @@
-﻿#include <iostream>
+﻿#include "commands.hpp"
 #include "ui.hpp"
-#include "commands.hpp"
+#include <iostream>
 
 int main(int argc, char* argv[])
 {

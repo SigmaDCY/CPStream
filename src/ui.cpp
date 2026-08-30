@@ -1,5 +1,4 @@
-﻿
-#include "ui.hpp"
+﻿#include "ui.hpp"
 #include <iostream>
 #include <string>
 

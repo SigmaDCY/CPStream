@@ -1,5 +1,5 @@
-﻿#include <iostream>
-#include "showHelp.hpp"
+﻿#include "showHelp.hpp"
+#include <iostream>
 
 void showHelp()
 {
