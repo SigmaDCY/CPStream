@@ -41,20 +41,9 @@ void cmds()
 			{
 				fetch(port);
 			}
-			catch (const std::invalid_argument& e)
-			{
-				ui::error(e.what());
-				std::cout << std::endl;
-			}
-			catch (const std::runtime_error& e)
-			{
-				ui::error(e.what());
-				std::cout << std::endl;
-			}
 			catch (const std::exception& e)
 			{
 				ui::error(e.what());
-				std::cout << std::endl;
 			}
 		}
 		else
