@@ -26,7 +26,7 @@ void cmds()
 		{
 			showHelp();
 		}
-		if (std::string(inst) == "fetch")
+		else if (std::string(inst) == "fetch")
 		{
 			std::cout << "请输入监听端口号> ";
 			int port;
