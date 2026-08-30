@@ -29,7 +29,7 @@ void fetch(int port)
 				ui::error("json文件解析失败!");
 			}
 		});
-	ui::success("开始在127.0.0.1:" + std::to_string(port) + "监听......");
+	ui::info("开始在127.0.0.1:" + std::to_string(port) + "监听......");
 	if (!server.listen("127.0.0.1", port))
 	{
 		ui::error("服务器启动失败！");

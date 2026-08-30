@@ -15,6 +15,11 @@ namespace ui {
 	void welcome();
 
 	// 通用输出函数
+	inline void info(const std::string& msg)
+	{
+		std::cout << CYAN << msg << RESET << std::endl;
+	}
+
 	inline void success(const std::string& msg)
 	{
 		std::cout << GREEN << msg << RESET << std::endl;
