@@ -18,3 +18,7 @@ add_executable(cpstream
     src/commands.cpp
     src/showHelp.cpp
 )
+
+if(WIN32)
+    target_link_libraries(cpstream ws2_32)
+endif()
