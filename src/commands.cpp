@@ -30,9 +30,10 @@ void cmds()
 		{
 			std::cout << "请输入监听端口号> ";
 			int port;
-			if (!(std::cin >> port)) {
-				std::cin.clear();  // 清除错误状态
-				std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');  // 丢弃错误输入
+			if (!(std::cin >> port))
+			{
+				std::cin.clear();													// 清除错误状态
+				std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // 丢弃错误输入
 				ui::warning("请输入数字！\n");
 				continue;
 			}
